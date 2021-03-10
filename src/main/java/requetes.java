@@ -60,7 +60,7 @@ public class requetes {
     }
 
     public static void main(String[] args) {
-        String DataSet = "C:\\Users\\adolp\\OneDrive\\Bureau\\Fac\\Master\\M1\\S2\\Web-Sémantique\\Projet\\projetJena\\src\\main\\resources\\Conferences";
+        String DataSet = "src/main/resources/Conferences";
         InputStream in = FileManager.get().open(DataSet);
         OntModel model = ModelFactory.createOntologyModel();
         model.read(in, null, "RDF/XML");
