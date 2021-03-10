@@ -459,10 +459,6 @@
         </Conference:sousThemeDe>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     </Conference:Thème>
-    <Conference:Spectateur rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#MLMUGNIER">
-        <Conference:nom>Maire-Laure Mugnier</Conference:nom>
-        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Person"/>
-    </Conference:Spectateur>
     <Conference:Spectateur rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#LLAAROUSSI">
         <Conference:nom>Laila LAAROUSSI</Conference:nom>
         <Conference:travaillerPour rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#UM"/>
