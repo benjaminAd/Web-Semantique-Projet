@@ -1,4 +1,5 @@
 import com.hp.hpl.jena.util.FileManager;
+import org.apache.jena.ontology.OntModel;
 import org.apache.jena.query.*;
 import org.apache.jena.rdf.model.*;
 import org.apache.jena.vocabulary.RDF;
@@ -61,7 +62,7 @@ public class requetes {
     public static void main(String[] args) throws IOException {
         String DataSet = "C:\\Users\\adolp\\OneDrive\\Bureau\\Fac\\Master\\M1\\S2\\Web-Sémantique\\Projet\\projetJena\\src\\main\\resources\\Conferences";
         InputStream in = FileManager.get().open(DataSet);
-        Model model = ModelFactory.createDefaultModel();
+        OntModel model = ModelFactory.createOntologyModel();
         model.read(in, null, "RDF/XML");
         requetes req = new requetes(model);
         String req_1 = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +
