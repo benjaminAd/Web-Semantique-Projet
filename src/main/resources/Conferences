@@ -1,0 +1,667 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-11#"
+     xml:base="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-11"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:Conference="http://www.semanticweb.org/adolp/ontologies/2021/Conference#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-11"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/adolp/ontologies/2021/Conference#abstractOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#abstractOf">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Conférence"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adolp/ontologies/2021/Conference#anime -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#anime">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#animéPar"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Animateur"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Conférence"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adolp/ontologies/2021/Conference#animéPar -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#animéPar"/>
+    
+
+
+    <!-- http://www.semanticweb.org/adolp/ontologies/2021/Conference#estLocalisé -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#estLocalisé">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Conférence"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Person"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Localisation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adolp/ontologies/2021/Conference#organise -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#organise">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#organiséPar"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Company"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Conférence"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adolp/ontologies/2021/Conference#organiséPar -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#organiséPar">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adolp/ontologies/2021/Conference#participe -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#participe">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Company"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Spectateur"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Conférence"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adolp/ontologies/2021/Conference#sousThemeDe -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#sousThemeDe">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Thème"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Thème"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adolp/ontologies/2021/Conference#themeDe -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#themeDe">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Thème"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Conférence"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adolp/ontologies/2021/Conference#travaillerPour -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#travaillerPour">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Company"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topObjectProperty">
+        <owl:inverseOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/adolp/ontologies/2021/Conference#date -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#date">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Conférence"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adolp/ontologies/2021/Conference#description -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#description">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Conférence"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adolp/ontologies/2021/Conference#durée -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#durée">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Conférence"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adolp/ontologies/2021/Conference#nbParticipants -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#nbParticipants">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Conférence"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adolp/ontologies/2021/Conference#nbParticipantsMax -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#nbParticipantsMax">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Conférence"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adolp/ontologies/2021/Conference#nom -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#nom">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adolp/ontologies/2021/Conference#nomCompagnie -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#nomCompagnie">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Company"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adolp/ontologies/2021/Conference#nomConf -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#nomConf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adolp/ontologies/2021/Conference#notes -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#notes">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Conférence"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adolp/ontologies/2021/Conference#prix -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#prix">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Conférence"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adolp/ontologies/2021/Conference#urlDistanciel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#urlDistanciel">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Localisation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/adolp/ontologies/2021/Conference#Animateur -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Animateur">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Person"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Spectateur"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adolp/ontologies/2021/Conference#BasPrixConference -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#BasPrixConference">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Conférence"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#prix"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#float">50.0</xsd:maxInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Conférence"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adolp/ontologies/2021/Conference#BientotConference -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#BientotConference">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Conférence"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#date"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-03-09T09:00:00</xsd:minInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#date"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-03-15T09:00:00</xsd:maxInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Conférence"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#TerminéeConférence"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adolp/ontologies/2021/Conference#Company -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Company"/>
+    
+
+
+    <!-- http://www.semanticweb.org/adolp/ontologies/2021/Conference#Conférence -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Conférence"/>
+    
+
+
+    <!-- http://www.semanticweb.org/adolp/ontologies/2021/Conference#CourteConference -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#CourteConference">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Conférence"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#durée"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">70</xsd:maxInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Conférence"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#LongueConference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adolp/ontologies/2021/Conference#Localisation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Localisation"/>
+    
+
+
+    <!-- http://www.semanticweb.org/adolp/ontologies/2021/Conference#LongueConference -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#LongueConference">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Conférence"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#durée"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">120</xsd:minInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Conférence"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adolp/ontologies/2021/Conference#MauvaiseConference -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#MauvaiseConference">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Conférence"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#notes"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</xsd:maxInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Conférence"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#MeilleurConference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adolp/ontologies/2021/Conference#MeilleurConference -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#MeilleurConference">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Conférence"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#nbParticipants"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100</xsd:minInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#notes"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</xsd:minInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Conférence"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adolp/ontologies/2021/Conference#Person -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Person"/>
+    
+
+
+    <!-- http://www.semanticweb.org/adolp/ontologies/2021/Conference#Spectateur -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Spectateur">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adolp/ontologies/2021/Conference#TerminéeConférence -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#TerminéeConférence">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Conférence"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#date"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-03-08T23:59:59</xsd:maxInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Conférence"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adolp/ontologies/2021/Conference#Thème -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Thème"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/adolp/ontologies/2021/Conference#BADOLPHE -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#BADOLPHE">
+        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Spectateur"/>
+        <Conference:participe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Cours_Sciences_de_Données"/>
+        <Conference:travaillerPour rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#UM"/>
+        <Conference:nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Benjamin ADOLPHE</Conference:nom>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/adolp/ontologies/2021/Conference#Cours_Sciences_de_Données -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Cours_Sciences_de_Données">
+        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Conférence"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#TerminéeConférence"/>
+        <Conference:animéPar rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#KTodorov"/>
+        <Conference:estLocalisé rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Distanciel"/>
+        <Conference:organiséPar rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#UM"/>
+        <Conference:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-02-12T14:00:00</Conference:date>
+        <Conference:nomConf rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cours de Sciences de données</Conference:nomConf>
+        <Conference:notes rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</Conference:notes>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/adolp/ontologies/2021/Conference#Cours_Web_Semantique -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Cours_Web_Semantique">
+        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#BientotConference"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Conférence"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#LongueConference"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#MeilleurConference"/>
+        <Conference:animéPar rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#SHarispe"/>
+        <Conference:estLocalisé rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Distanciel"/>
+        <Conference:organiséPar rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#UM"/>
+        <Conference:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-03-13T09:00:00</Conference:date>
+        <Conference:durée rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">120</Conference:durée>
+        <Conference:nbParticipants rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">150</Conference:nbParticipants>
+        <Conference:notes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</Conference:notes>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/adolp/ontologies/2021/Conference#Distanciel -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Distanciel">
+        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Localisation"/>
+        <Conference:urlDistanciel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://um.com</Conference:urlDistanciel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/adolp/ontologies/2021/Conference#Informatique -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Informatique">
+        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Thème"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/adolp/ontologies/2021/Conference#KTodorov -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#KTodorov">
+        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Animateur"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Person"/>
+        <Conference:anime rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Cours_Sciences_de_Données"/>
+        <Conference:travaillerPour rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#UM"/>
+        <Conference:nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kostantin Todorov</Conference:nom>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/adolp/ontologies/2021/Conference#LLAAROUSSI -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#LLAAROUSSI">
+        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Spectateur"/>
+        <Conference:participe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Cours_Sciences_de_Données"/>
+        <Conference:travaillerPour rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#UM"/>
+        <Conference:nom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Laila LAAROUSSI</Conference:nom>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/adolp/ontologies/2021/Conference#SHarispe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#SHarispe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Animateur"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Person"/>
+        <Conference:anime rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Cours_Web_Semantique"/>
+        <Conference:nom>Sébatien Harispe</Conference:nom>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/adolp/ontologies/2021/Conference#Sciences_des_Données -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Sciences_des_Données">
+        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Thème"/>
+        <Conference:sousThemeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Informatique"/>
+        <Conference:themeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Cours_Sciences_de_Données"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/adolp/ontologies/2021/Conference#UM -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#UM">
+        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Company"/>
+        <Conference:organise rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Cours_Sciences_de_Données"/>
+        <Conference:organise rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Cours_Web_Semantique"/>
+        <Conference:nomCompagnie rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Université de Montpellier</Conference:nomCompagnie>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
