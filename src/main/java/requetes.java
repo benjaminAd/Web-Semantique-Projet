@@ -67,15 +67,16 @@ public class requetes {
         requetes req = new requetes(model);
         String req_1 = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +
                 "PREFIX conf: <http://www.semanticweb.org/adolp/ontologies/2021/Conference#>"
-                + "SELECT ?nomConf " +
-                "WHERE {?s rdf:type conf:Conférence ." +
-                "?s conf:nomConf ?nomConf .}";
+                + "SELECT ?s ?nowTime ?nextMonth " +
+                "WHERE {?s conf:date ?date ." +
+                "BIND((NOW()) as ?nowTime ) " +
+                "BIND(((DAY(?nowTime))+7) as ?nextWeek) " +
+                "FILTER ( ?date > ?nowTime && DAY(?date) <= ?nextWeek)}";
         Query q = QueryFactory.create(req_1);
         QueryExecution qexec = QueryExecutionFactory.create(q, req.getModel());
         try {
 
             ResultSet rs = qexec.execSelect();
-
             ResultSetFormatter.out(System.out, rs, q);
 
         } finally {
