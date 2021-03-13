@@ -440,6 +440,25 @@
     
 
 
+    <!-- http://www.semanticweb.org/adolp/ontologies/2021/Conference#DistancielConference -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#DistancielConference">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Conférence"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#estLocalisé"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Distanciel"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Conférence"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/adolp/ontologies/2021/Conference#HybrideConference -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#HybrideConference">
@@ -459,6 +478,8 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Conférence"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#DistancielConference"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#PresentielConference"/>
     </owl:Class>
     
 
@@ -587,6 +608,25 @@
     <!-- http://www.semanticweb.org/adolp/ontologies/2021/Conference#Person -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Person"/>
+    
+
+
+    <!-- http://www.semanticweb.org/adolp/ontologies/2021/Conference#PresentielConference -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#PresentielConference">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Conférence"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#estLocalisé"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Présentiel"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Conférence"/>
+    </owl:Class>
     
 
 
@@ -769,8 +809,10 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Conference_NASA">
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Conférence"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#LongueConference"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#PresentielConference"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#VulgarisationConference"/>
         <Conference:animéPar rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#TPesquet"/>
+        <Conference:estLocalisé rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#AMphiCalifornie"/>
         <Conference:organiséPar rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#NASA"/>
         <Conference:participerPar rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#LambdaA"/>
         <Conference:participerPar rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#LambdaB"/>
@@ -791,13 +833,17 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Conférence"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#LongueConference"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#MauvaiseConference"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#PresentielConference"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#ProConference"/>
         <Conference:animéPar rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#MalikB"/>
         <Conference:estLocalisé rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#AMphiCalifornie"/>
         <Conference:organiséPar rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#LaboRandom"/>
         <Conference:participerPar rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#UnChercheur"/>
+        <Conference:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-05-23T15:00:00</Conference:date>
         <Conference:description>Ceci est une description</Conference:description>
         <Conference:durée rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">180</Conference:durée>
+        <Conference:nbParticipants rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">125</Conference:nbParticipants>
+        <Conference:nbParticipantsMax rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">150</Conference:nbParticipantsMax>
         <Conference:nomConf>Conférence Nucléophile</Conference:nomConf>
         <Conference:notes rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</Conference:notes>
         <Conference:prixPresentiel rdf:datatype="http://www.w3.org/2001/XMLSchema#float">300.0</Conference:prixPresentiel>
@@ -811,8 +857,10 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#BasPrixConference"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Conférence"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#CoursConference"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#DistancielConference"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#HybrideConference"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#LongueConference"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#PresentielConference"/>
         <Conference:animéPar rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#BPayet"/>
         <Conference:estLocalisé rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#DistancielUniv"/>
         <Conference:estLocalisé rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Université"/>
@@ -836,6 +884,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#BasPrixConference"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Conférence"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#CoursConference"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#DistancielConference"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#LongueConference"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#MeilleurConference"/>
         <Conference:animéPar rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#KTodorov"/>
@@ -861,8 +910,10 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#BasPrixConference"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Conférence"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#CoursConference"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#DistancielConference"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#HybrideConference"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#LongueConference"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#PresentielConference"/>
         <Conference:animéPar rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#SHarispe"/>
         <Conference:estLocalisé rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#DistancielUniv"/>
         <Conference:estLocalisé rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Université"/>

@@ -193,7 +193,7 @@ public class requetes {
                 " ?conference conference:organiséPar ?company . " +
                 " ?conference conference:nomConf ?name ." +
                 " ?conference conference:date ?date ." +
-                " 3?company conference:nomCompagnie \"" + organisation + "\"}";
+                " ?company conference:nomCompagnie \"" + organisation + "\"}";
         try {
             Query q = QueryFactory.create(req_organisateur);
             QueryExecution qexec = QueryExecutionFactory.create(q, this.model);
@@ -238,6 +238,7 @@ public class requetes {
                 "SELECT ?nom ?date " +
                 "WHERE {?s rdf:type <http://www.semanticweb.org/adolp/ontologies/2021/Conference#BasPrixConference> ." +
                 " ?s conf:nomConf ?nom ." +
+                " ?s conf:date ?data ." +
                 "}";
         Query q = QueryFactory.create(req_cheapConference);
         QueryExecution qexec = QueryExecutionFactory.create(q, this.model);
@@ -274,34 +275,32 @@ public class requetes {
     public void longConference() {
         String req_longConference = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +
                 "PREFIX conf: <http://www.semanticweb.org/adolp/ontologies/2021/Conference#>" +
-                "SELECT ?nom ?date ?s " +
-                "WHERE {?s rdf:type conf:LongueConference ." +
+                "SELECT ?nom ?date " +
+                "WHERE {?s rdf:type conf:LongueConference . " +
                 " ?s conf:nomConf ?nom ." +
+                " ?s conf:date ?date" +
                 "}";
         Query q = QueryFactory.create(req_longConference);
         QueryExecution qexec = QueryExecutionFactory.create(q, this.model);
         try {
 
             ResultSet rs = qexec.execSelect();
-            /*String[] s = ResultSetFormatter.asText(rs).split("\\|");
-            for (int i = 3; i < s.length; i++) {
-                if ((i % 3 != 0) && (i % 4 == 0)) {
-                    System.out.println(s[i]);
-                    Resource conf = model.getResource(s[i].split("<")[1].split(">")[0]);
-                    for (StmtIterator it = conf.listProperties(); it.hasNext(); ) {
-                        Statement statement = it.next();
-                        System.out.print("    " + statement.getPredicate().getLocalName() + " -> ");
-
-                        if (statement.getObject().isLiteral()) {
-                            System.out.println(statement.getLiteral().getLexicalForm());
-                        } else {
-                            System.out.println(statement.getObject());
-                        }
-                    }
-                    System.out.println("-------------------------------------------------");
-                }
-            }*/
-
+//            String[] s = ResultSetFormatter.asText(rs).split("\\|");
+//            for (int i = 3; i < s.length-1; i++) {
+////                    System.out.println(s[i]);
+//                    Resource conf = model.getResource(s[i].split("<")[0].split(">")[0]);
+//                    for (StmtIterator it = conf.listProperties(); it.hasNext(); ) {
+//                        Statement statement = it.next();
+//                        System.out.print("    " + statement.getPredicate().getLocalName() + " -> ");
+//
+//                        if (statement.getObject().isLiteral()) {
+//                            System.out.println(statement.getLiteral().getLexicalForm());
+//                        } else {
+//                            System.out.println(statement.getObject());
+//                        }
+//                    }
+//                    System.out.println("-------------------------------------------------");
+//            }
             ResultSetFormatter.out(System.out, rs);
 
         } finally {
@@ -313,33 +312,75 @@ public class requetes {
     public void shortConference() {
         String req_shortConference = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +
                 "PREFIX conf: <http://www.semanticweb.org/adolp/ontologies/2021/Conference#>" +
-                "SELECT ?nom ?date ?s " +
+                "SELECT ?nom ?date " +
                 "WHERE {?s rdf:type conf:CourteConference ." +
                 " ?s conf:nomConf ?nom ." +
+                " ?s conf:date ?date" +
                 "}";
         Query q = QueryFactory.create(req_shortConference);
         QueryExecution qexec = QueryExecutionFactory.create(q, this.model);
         try {
 
             ResultSet rs = qexec.execSelect();
-            /*String[] s = ResultSetFormatter.asText(rs).split("\\|");
-            for (int i = 3; i < s.length; i++) {
-                if ((i % 3 != 0) && (i % 4 == 0)) {
-                    System.out.println(s[i]);
-                    Resource conf = model.getResource(s[i].split("<")[1].split(">")[0]);
-                    for (StmtIterator it = conf.listProperties(); it.hasNext(); ) {
-                        Statement statement = it.next();
-                        System.out.print("    " + statement.getPredicate().getLocalName() + " -> ");
+//            String[] s = ResultSetFormatter.asText(rs).split("\\|");
+//            for (int i = 3; i < s.length; i++) {
+//                if ((i % 3 != 0) && (i % 4 == 0)) {
+//                    System.out.println(s[i]);
+//                    Resource conf = model.getResource(s[i].split("<")[1].split(">")[0]);
+//                    for (StmtIterator it = conf.listProperties(); it.hasNext(); ) {
+//                        Statement statement = it.next();
+//                        System.out.print("    " + statement.getPredicate().getLocalName() + " -> ");
+//
+//                        if (statement.getObject().isLiteral()) {
+//                            System.out.println(statement.getLiteral().getLexicalForm());
+//                        } else {
+//                            System.out.println(statement.getObject());
+//                        }
+//                    }
+//                    System.out.println("-------------------------------------------------");
+//                }
+//            }
 
-                        if (statement.getObject().isLiteral()) {
-                            System.out.println(statement.getLiteral().getLexicalForm());
-                        } else {
-                            System.out.println(statement.getObject());
-                        }
-                    }
-                    System.out.println("-------------------------------------------------");
-                }
-            }*/
+            ResultSetFormatter.out(System.out, rs);
+
+        } finally {
+
+            qexec.close();
+        }
+    }
+
+    public void TypeConference(String indice) {
+        String[] types = {"VulgarisationConference", "ProConference", "HybrideConference", "PresentielConference", "DistancielConference", "MeilleurConference", "MauvaiseConference"};
+        String req_TypeSort = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +
+                "PREFIX conf: <http://www.semanticweb.org/adolp/ontologies/2021/Conference#>" +
+                "SELECT ?nom ?date " +
+                "WHERE {?s rdf:type conf:" + types[Integer.parseInt(indice)] + " ." +
+                " ?s conf:nomConf ?nom ." +
+                " ?s conf:date ?date" +
+                "}";
+        Query q = QueryFactory.create(req_TypeSort);
+        QueryExecution qexec = QueryExecutionFactory.create(q, this.model);
+        try {
+
+            ResultSet rs = qexec.execSelect();
+//            String[] s = ResultSetFormatter.asText(rs).split("\\|");
+//            for (int i = 3; i < s.length; i++) {
+//                if ((i % 3 != 0) && (i % 4 == 0)) {
+//                    System.out.println(s[i]);
+//                    Resource conf = model.getResource(s[i].split("<")[1].split(">")[0]);
+//                    for (StmtIterator it = conf.listProperties(); it.hasNext(); ) {
+//                        Statement statement = it.next();
+//                        System.out.print("    " + statement.getPredicate().getLocalName() + " -> ");
+//
+//                        if (statement.getObject().isLiteral()) {
+//                            System.out.println(statement.getLiteral().getLexicalForm());
+//                        } else {
+//                            System.out.println(statement.getObject());
+//                        }
+//                    }
+//                    System.out.println("-------------------------------------------------");
+//                }
+//            }
 
             ResultSetFormatter.out(System.out, rs);
 
@@ -363,6 +404,7 @@ public class requetes {
             System.out.println("3. Afficher les conferences d'une certaine organisation");
             System.out.println("4. Afficher les conferences à bas prix");
             System.out.println("5. Afficher les conférences selon la durée");
+            System.out.println("6. Afficher les conférences selon leurs types");
             System.out.println("E. Quittez l'application");
             Scanner user = new Scanner(System.in);
             switch (user.nextLine()) {
@@ -398,6 +440,17 @@ public class requetes {
                             req.shortConference();
                             break;
                     }
+                    break;
+                case "6":
+                    System.out.println("Choisissez le type");
+                    System.out.println("0. Vulgaire");
+                    System.out.println("1. Pro");
+                    System.out.println("2. Hybride");
+                    System.out.println("3. Présentiel");
+                    System.out.println("4. Distanciel");
+                    System.out.println("5. Meilleure");
+                    System.out.println("6. Mauvaise");
+                    req.TypeConference(user.nextLine());
                     break;
                 case "E":
                     return;
