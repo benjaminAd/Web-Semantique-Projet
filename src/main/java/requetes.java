@@ -272,10 +272,10 @@ public class requetes {
     }
 
     public void longConference() {
-        String req_longConference = "PREFIX owl: <http://www.w3.org/2002/07/owl#> " +
+        String req_longConference = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +
                 "PREFIX conf: <http://www.semanticweb.org/adolp/ontologies/2021/Conference#>" +
-                "SELECT ?nom ?date " +
-                "WHERE {?s owl:Class <http://www.semanticweb.org/adolp/ontologies/2021/Conference#LongueConference> ." +
+                "SELECT ?nom ?date ?s " +
+                "WHERE {?s rdf:type conf:LongueConference ." +
                 " ?s conf:nomConf ?nom ." +
                 "}";
         Query q = QueryFactory.create(req_longConference);
@@ -311,10 +311,10 @@ public class requetes {
     }
 
     public void shortConference() {
-        String req_shortConference = "PREFIX owl: <http://www.w3.org/2002/07/owl#> " +
+        String req_shortConference = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +
                 "PREFIX conf: <http://www.semanticweb.org/adolp/ontologies/2021/Conference#>" +
-                "SELECT ?nom ?date " +
-                "WHERE {?s owl:Class <http://www.semanticweb.org/adolp/ontologies/2021/Conference#CourteConference> ." +
+                "SELECT ?nom ?date ?s " +
+                "WHERE {?s rdf:type conf:CourteConference ." +
                 " ?s conf:nomConf ?nom ." +
                 "}";
         Query q = QueryFactory.create(req_shortConference);
