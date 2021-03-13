@@ -390,6 +390,129 @@ public class requetes {
         }
     }
 
+    public void ThemeConference(String indice) {
+        String[] themes = {"Biologie", "Biologie_animale", "Calcul_des_forces", "Chimie", "Chimie_inorganique", "Informatique", "Ingienerie_spatialle", "Physique", "Sciences_des_Données", "Sciences_Ingenieur", "Web_Sémantique"};
+        String req_TypeSort = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +
+                "PREFIX conf: <http://www.semanticweb.org/adolp/ontologies/2021/Conference#>" +
+                "SELECT ?nom ?date " +
+                "WHERE {?s conf:theme conf:" + themes[Integer.parseInt(indice)] + " ." +
+                " ?s conf:nomConf ?nom ." +
+                " ?s conf:date ?date " +
+                "}";
+        Query q = QueryFactory.create(req_TypeSort);
+        QueryExecution qexec = QueryExecutionFactory.create(q, this.model);
+        try {
+
+            ResultSet rs = qexec.execSelect();
+//            String[] s = ResultSetFormatter.asText(rs).split("\\|");
+//            for (int i = 3; i < s.length; i++) {
+//                if ((i % 3 != 0) && (i % 4 == 0)) {
+//                    System.out.println(s[i]);
+//                    Resource conf = model.getResource(s[i].split("<")[1].split(">")[0]);
+//                    for (StmtIterator it = conf.listProperties(); it.hasNext(); ) {
+//                        Statement statement = it.next();
+//                        System.out.print("    " + statement.getPredicate().getLocalName() + " -> ");
+//
+//                        if (statement.getObject().isLiteral()) {
+//                            System.out.println(statement.getLiteral().getLexicalForm());
+//                        } else {
+//                            System.out.println(statement.getObject());
+//                        }
+//                    }
+//                    System.out.println("-------------------------------------------------");
+//                }
+//            }
+
+            ResultSetFormatter.out(System.out, rs);
+
+        } finally {
+
+            qexec.close();
+        }
+        System.out.println("Quelques suggestions qui pourraient vous intéresser :");
+        String req_suggestion = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +
+                "PREFIX conf: <http://www.semanticweb.org/adolp/ontologies/2021/Conference#>" +
+                "SELECT ?nom ?date " +
+                "WHERE {" +
+                " conf:" + themes[Integer.parseInt(indice)] + " conf:sousThemeDe ?PrimaryTheme ." +
+                " ?subTheme conf:sousThemeDe ?PrimaryTheme ." +
+                " ?s conf:Theme ?subTheme ." +
+                " ?s conf:nomConf ?nom ." +
+                " ?s conf:date ?date ." +
+                "}";
+        Query q2 = QueryFactory.create(req_suggestion);
+        QueryExecution qexec2 = QueryExecutionFactory.create(q2, this.model);
+        try {
+
+            ResultSet rs2 = qexec2.execSelect();
+//            String[] s = ResultSetFormatter.asText(rs).split("\\|");
+//            for (int i = 3; i < s.length; i++) {
+//                if ((i % 3 != 0) && (i % 4 == 0)) {
+//                    System.out.println(s[i]);
+//                    Resource conf = model.getResource(s[i].split("<")[1].split(">")[0]);
+//                    for (StmtIterator it = conf.listProperties(); it.hasNext(); ) {
+//                        Statement statement = it.next();
+//                        System.out.print("    " + statement.getPredicate().getLocalName() + " -> ");
+//
+//                        if (statement.getObject().isLiteral()) {
+//                            System.out.println(statement.getLiteral().getLexicalForm());
+//                        } else {
+//                            System.out.println(statement.getObject());
+//                        }
+//                    }
+//                    System.out.println("-------------------------------------------------");
+//                }
+//            }
+
+            ResultSetFormatter.out(System.out, rs2);
+
+        } finally {
+
+            qexec2.close();
+        }
+    }
+
+    public void confByName(String name) {
+        String req_TypeSort = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +
+                "PREFIX conf: <http://www.semanticweb.org/adolp/ontologies/2021/Conference#>" +
+                "SELECT ?nom ?date " +
+                "WHERE { " +
+                " ?s conf:nomConf ?nom ." +
+                " ?s conf:date ?date ." +
+                " FILTER regex(?nom,\"" + name + "\") ." +
+                "}";
+        Query q = QueryFactory.create(req_TypeSort);
+        QueryExecution qexec = QueryExecutionFactory.create(q, this.model);
+        try {
+
+            ResultSet rs = qexec.execSelect();
+//            String[] s = ResultSetFormatter.asText(rs).split("\\|");
+//            for (int i = 3; i < s.length; i++) {
+//                if ((i % 3 != 0) && (i % 4 == 0)) {
+//                    System.out.println(s[i]);
+//                    Resource conf = model.getResource(s[i].split("<")[1].split(">")[0]);
+//                    for (StmtIterator it = conf.listProperties(); it.hasNext(); ) {
+//                        Statement statement = it.next();
+//                        System.out.print("    " + statement.getPredicate().getLocalName() + " -> ");
+//
+//                        if (statement.getObject().isLiteral()) {
+//                            System.out.println(statement.getLiteral().getLexicalForm());
+//                        } else {
+//                            System.out.println(statement.getObject());
+//                        }
+//                    }
+//                    System.out.println("-------------------------------------------------");
+//                }
+//            }
+
+            ResultSetFormatter.out(System.out, rs);
+
+        } finally {
+
+            qexec.close();
+        }
+    }
+
     public static void main(String[] args) throws IOException {
         String DataSet = "src/main/resources/Conferences";
         InputStream in = FileManager.get().open(DataSet);
@@ -405,6 +528,8 @@ public class requetes {
             System.out.println("4. Afficher les conferences à bas prix");
             System.out.println("5. Afficher les conférences selon la durée");
             System.out.println("6. Afficher les conférences selon leurs types");
+            System.out.println("7. Afficher les conférence selon leurs thèmes");
+            System.out.println("8. Rechercher les conférences par leurs noms");
             System.out.println("E. Quittez l'application");
             Scanner user = new Scanner(System.in);
             switch (user.nextLine()) {
@@ -451,6 +576,25 @@ public class requetes {
                     System.out.println("5. Meilleure");
                     System.out.println("6. Mauvaise");
                     req.TypeConference(user.nextLine());
+                    break;
+                case "7":
+                    System.out.println("Choisissez un thème");
+                    System.out.println("0. Biologie");
+                    System.out.println("1. Biologie animale");
+                    System.out.println("2. Calcul des forces");
+                    System.out.println("3. Chimie");
+                    System.out.println("4. Chimie inorganique");
+                    System.out.println("5. Informatique");
+                    System.out.println("6. Ingienerie spatiale");
+                    System.out.println("7. Physique");
+                    System.out.println("8. Sciences des données");
+                    System.out.println("9. Sciences de l'ingénieur");
+                    System.out.println("10. Web Sémantique");
+                    req.ThemeConference(user.nextLine());
+                    break;
+                case "8":
+                    System.out.println("Entrez le nom de la conférence (Si vous ne connaissez pas le nom entièrement, écrivez une partie du nom)");
+                    req.confByName(user.nextLine());
                     break;
                 case "E":
                     return;

@@ -766,7 +766,11 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Biologie">
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Thème"/>
+        <Conference:sousThemeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Biologie"/>
+        <Conference:sousThemeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Biologie_animale"/>
+        <Conference:themeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Cours_Biologie_animale"/>
         <Conference:nomTheme>Biologie</Conference:nomTheme>
+        <Conference:nomTheme>Biologie animale</Conference:nomTheme>
     </owl:NamedIndividual>
     
 
@@ -776,7 +780,9 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Biologie_animale">
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Thème"/>
         <Conference:sousThemeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Biologie"/>
+        <Conference:sousThemeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Biologie_animale"/>
         <Conference:themeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Cours_Biologie_animale"/>
+        <Conference:nomTheme>Biologie</Conference:nomTheme>
         <Conference:nomTheme>Biologie animale</Conference:nomTheme>
     </owl:NamedIndividual>
     
@@ -786,11 +792,14 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Calcul_des_forces">
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Thème"/>
+        <Conference:sousThemeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Calcul_des_forces"/>
+        <Conference:sousThemeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Ingienerie_spatialle"/>
         <Conference:sousThemeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Physique"/>
         <Conference:sousThemeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Sciences_Ingenieur"/>
         <Conference:themeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Conference_NASA"/>
         <Conference:nomTheme>Calcul des forces</Conference:nomTheme>
         <Conference:nomTheme>Ingienerie Spatiale</Conference:nomTheme>
+        <Conference:nomTheme>Physique</Conference:nomTheme>
     </owl:NamedIndividual>
     
 
@@ -799,7 +808,11 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Chimie">
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Thème"/>
+        <Conference:sousThemeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Chimie"/>
+        <Conference:sousThemeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Chimie_inorganique"/>
+        <Conference:themeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Conference_Nucléophile"/>
         <Conference:nomTheme>Chimie</Conference:nomTheme>
+        <Conference:nomTheme>Chimie inorganique</Conference:nomTheme>
     </owl:NamedIndividual>
     
 
@@ -809,7 +822,9 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Chimie_inorganique">
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Thème"/>
         <Conference:sousThemeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Chimie"/>
+        <Conference:sousThemeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Chimie_inorganique"/>
         <Conference:themeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Conference_Nucléophile"/>
+        <Conference:nomTheme>Chimie</Conference:nomTheme>
         <Conference:nomTheme>Chimie inorganique</Conference:nomTheme>
     </owl:NamedIndividual>
     
@@ -829,6 +844,7 @@
         <Conference:participerPar rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#LambdaB"/>
         <Conference:theme rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Calcul_des_forces"/>
         <Conference:theme rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Ingienerie_spatialle"/>
+        <Conference:theme rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Physique"/>
         <Conference:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-03-30T14:00:00</Conference:date>
         <Conference:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Description du fonctionnement d&apos;une fusée pour les débutants.</Conference:description>
         <Conference:durée rdf:datatype="http://www.w3.org/2001/XMLSchema#int">300</Conference:durée>
@@ -852,6 +868,7 @@
         <Conference:estLocalisé rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#AMphiCalifornie"/>
         <Conference:organiséPar rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#LaboRandom"/>
         <Conference:participerPar rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#UnChercheur"/>
+        <Conference:theme rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Chimie"/>
         <Conference:theme rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Chimie_inorganique"/>
         <Conference:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-05-23T15:00:00</Conference:date>
         <Conference:description>Ceci est une description</Conference:description>
@@ -880,6 +897,7 @@
         <Conference:estLocalisé rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Université"/>
         <Conference:organiséPar rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#UR"/>
         <Conference:participerPar rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#BADOLPHE"/>
+        <Conference:theme rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Biologie"/>
         <Conference:theme rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Biologie_animale"/>
         <Conference:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-02-20T16:00:00</Conference:date>
         <Conference:description>Étude de la biologie animale</Conference:description>
@@ -907,7 +925,9 @@
         <Conference:organiséPar rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#UM"/>
         <Conference:participerPar rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#BADOLPHE"/>
         <Conference:participerPar rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#LLAAROUSSI"/>
+        <Conference:theme rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Informatique"/>
         <Conference:theme rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Sciences_des_Données"/>
+        <Conference:theme rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Web_Sémantique"/>
         <Conference:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-02-12T14:00:00</Conference:date>
         <Conference:description>Cours sur le Data Mining</Conference:description>
         <Conference:durée rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">120</Conference:durée>
@@ -936,6 +956,8 @@
         <Conference:organiséPar rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#UM"/>
         <Conference:participerPar rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#BADOLPHE"/>
         <Conference:participerPar rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#LLAAROUSSI"/>
+        <Conference:theme rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Informatique"/>
+        <Conference:theme rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Sciences_des_Données"/>
         <Conference:theme rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Web_Sémantique"/>
         <Conference:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-03-13T09:00:00</Conference:date>
         <Conference:description>Cours sur Protégé</Conference:description>
@@ -964,7 +986,13 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Informatique">
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Thème"/>
+        <Conference:sousThemeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Informatique"/>
+        <Conference:sousThemeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Sciences_des_Données"/>
+        <Conference:sousThemeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Web_Sémantique"/>
+        <Conference:themeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Cours_Sciences_de_Données"/>
+        <Conference:themeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Cours_Web_Semantique"/>
         <Conference:nomTheme>Informatique</Conference:nomTheme>
+        <Conference:nomTheme>Sciences des données</Conference:nomTheme>
     </owl:NamedIndividual>
     
 
@@ -973,11 +1001,14 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Ingienerie_spatialle">
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Thème"/>
+        <Conference:sousThemeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Calcul_des_forces"/>
+        <Conference:sousThemeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Ingienerie_spatialle"/>
         <Conference:sousThemeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Physique"/>
         <Conference:sousThemeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Sciences_Ingenieur"/>
         <Conference:themeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Conference_NASA"/>
         <Conference:nomTheme>Calcul des forces</Conference:nomTheme>
         <Conference:nomTheme>Ingienerie Spatiale</Conference:nomTheme>
+        <Conference:nomTheme>Physique</Conference:nomTheme>
     </owl:NamedIndividual>
     
 
@@ -1068,6 +1099,12 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Physique">
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Thème"/>
+        <Conference:sousThemeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Calcul_des_forces"/>
+        <Conference:sousThemeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Ingienerie_spatialle"/>
+        <Conference:sousThemeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Physique"/>
+        <Conference:sousThemeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Sciences_Ingenieur"/>
+        <Conference:themeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Conference_NASA"/>
+        <Conference:nomTheme>Calcul des forces</Conference:nomTheme>
         <Conference:nomTheme>Physique</Conference:nomTheme>
     </owl:NamedIndividual>
     
@@ -1098,8 +1135,13 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Sciences_des_Données">
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Thème"/>
         <Conference:sousThemeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Informatique"/>
+        <Conference:sousThemeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Sciences_des_Données"/>
+        <Conference:sousThemeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Web_Sémantique"/>
         <Conference:themeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Cours_Sciences_de_Données"/>
+        <Conference:themeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Cours_Web_Semantique"/>
+        <Conference:nomTheme>Informatique</Conference:nomTheme>
         <Conference:nomTheme>Sciences des données</Conference:nomTheme>
+        <Conference:nomTheme>Web Sémantique</Conference:nomTheme>
     </owl:NamedIndividual>
     
 
@@ -1165,7 +1207,12 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Web_Sémantique">
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Thème"/>
         <Conference:sousThemeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Informatique"/>
+        <Conference:sousThemeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Sciences_des_Données"/>
+        <Conference:sousThemeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Web_Sémantique"/>
+        <Conference:themeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Cours_Sciences_de_Données"/>
         <Conference:themeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/Conference#Cours_Web_Semantique"/>
+        <Conference:nomTheme>Informatique</Conference:nomTheme>
+        <Conference:nomTheme>Sciences des données</Conference:nomTheme>
         <Conference:nomTheme>Web Sémantique</Conference:nomTheme>
     </owl:NamedIndividual>
 </rdf:RDF>
