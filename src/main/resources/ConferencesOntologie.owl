@@ -148,16 +148,6 @@
     
 
 
-    <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
-
-    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topObjectProperty">
-        <owl:inverseOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-    </rdf:Description>
-    
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -301,11 +291,7 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Animateur">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Personne"/>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Chercheur"/>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Lambda"/>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Passionné"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Spectateur"/>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Élève"/>
     </owl:Class>
     
 
@@ -352,7 +338,6 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Conférence"/>
     </owl:Class>
     
 
@@ -422,7 +407,6 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Conférence"/>
     </owl:Class>
     
 
@@ -485,8 +469,6 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Conférence"/>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#DistancielConference"/>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#PresentielConference"/>
     </owl:Class>
     
 
@@ -754,7 +736,6 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#AmphiCalifornie">
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Localisation"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Présentiel"/>
         <adresse>120 rue Californie</adresse>
     </owl:NamedIndividual>
     
@@ -764,10 +745,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#BAdolphe">
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Personne"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Spectateur"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Élève"/>
-        <participe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Cours_Sciences_de_Données"/>
-        <participe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Cours_Web_Semantique"/>
         <travaillerPour rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#UM"/>
         <nom>Benjamin ADOLPHE</nom>
     </owl:NamedIndividual>
@@ -778,8 +756,6 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#BPayet">
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Animateur"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Personne"/>
-        <anime rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Conference_Biologie_animale"/>
         <travaillerPour rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#UR"/>
         <nom>Bertand Payet</nom>
     </owl:NamedIndividual>
@@ -800,7 +776,6 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Biologie_animale">
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Thème"/>
         <sousThemeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Biologie"/>
-        <themeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Conference_Biologie_animale"/>
         <nomTheme>Biologie Animale</nomTheme>
     </owl:NamedIndividual>
     
@@ -811,7 +786,6 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Calcul_des_forces">
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Thème"/>
         <sousThemeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Physique"/>
-        <themeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Conference_NASA"/>
         <nomTheme>Calcul des forces</nomTheme>
     </owl:NamedIndividual>
     
@@ -822,8 +796,6 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#ChercheurA">
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Chercheur"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Personne"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Spectateur"/>
-        <participe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Conference_Nucleophile"/>
         <travaillerPour rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#LaboRandom"/>
         <nom>ChercheurA</nom>
     </owl:NamedIndividual>
@@ -844,7 +816,6 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Chimie_inorganique">
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Thème"/>
         <sousThemeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Chimie"/>
-        <themeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Conference_Nucleophile"/>
         <nomTheme>Chimie inorganique</nomTheme>
     </owl:NamedIndividual>
     
@@ -854,11 +825,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Conference_Biologie_animale">
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Conférence"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#CoursConference"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#DistancielConference"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#HybrideConference"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#LongueConference"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#MeilleurConference"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#PresentielConference"/>
         <animePar rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#BPayet"/>
         <cout rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#prixBioAnimalDist"/>
@@ -882,9 +849,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Conference_NASA">
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Conférence"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#LongueConference"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#PresentielConference"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#VulgarisationConference"/>
         <animePar rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#TPesquet"/>
         <cout rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#prixNasa"/>
         <estLocalisé rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#AmphiCalifornie"/>
@@ -906,12 +871,7 @@
     <!-- http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Conference_Nucleophile -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Conference_Nucleophile">
-        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#BasPrixConference"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Conférence"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#LongueConference"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#MauvaiseConference"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#PresentielConference"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#ProConference"/>
         <animePar rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#MalikB"/>
         <cout rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#prixNucleophile"/>
         <estLocalisé rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#AmphiCalifornie"/>
@@ -933,9 +893,6 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Cours_Sciences_de_Données">
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Conférence"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#CoursConference"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#CourteConference"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#MeilleurConference"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#PresentielConference"/>
         <animePar rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#KTodorov"/>
         <cout rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#prixSciencesDonnees"/>
@@ -958,12 +915,8 @@
     <!-- http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Cours_Web_Semantique -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Cours_Web_Semantique">
-        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#BasPrixConference"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Conférence"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#CoursConference"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#DistancielConference"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#HybrideConference"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#LongueConference"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#PresentielConference"/>
         <animePar rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#KTodorov"/>
         <cout rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#prixWebSemDist"/>
@@ -1018,9 +971,6 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#KTodorov">
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Animateur"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Personne"/>
-        <anime rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Cours_Sciences_de_Données"/>
-        <anime rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Cours_Web_Semantique"/>
         <travaillerPour rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#UM"/>
         <nom>Konstantin Todorov</nom>
     </owl:NamedIndividual>
@@ -1031,11 +981,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#LLaaroussi">
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Personne"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Spectateur"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Élève"/>
-        <participe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Conference_Biologie_animale"/>
-        <participe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Cours_Sciences_de_Données"/>
-        <participe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Cours_Web_Semantique"/>
         <travaillerPour rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#UM"/>
         <nom>Laila LAAROUSSI</nom>
     </owl:NamedIndividual>
@@ -1046,7 +992,6 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#LaboRandom">
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Company"/>
-        <organise rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Conference_Nucleophile"/>
         <nomCompagnie>Labo Random</nomCompagnie>
     </owl:NamedIndividual>
     
@@ -1057,8 +1002,6 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#LambdaB">
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Lambda"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Personne"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Spectateur"/>
-        <participe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Conference_NASA"/>
         <nom>Lambda B</nom>
     </owl:NamedIndividual>
     
@@ -1069,8 +1012,6 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#LamdaA">
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Lambda"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Personne"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Spectateur"/>
-        <participe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Conference_NASA"/>
         <nom>Lambda A</nom>
     </owl:NamedIndividual>
     
@@ -1080,8 +1021,6 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#MalikB">
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Animateur"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Personne"/>
-        <anime rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Conference_Nucleophile"/>
         <travaillerPour rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#LaboRandom"/>
         <nom>Malik Baba</nom>
     </owl:NamedIndividual>
@@ -1092,7 +1031,6 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#NASA">
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Company"/>
-        <organise rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Conference_NASA"/>
         <nomCompagnie>NASA</nomCompagnie>
     </owl:NamedIndividual>
     
@@ -1111,7 +1049,6 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Sciences_Ingenieur">
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Thème"/>
-        <themeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Conference_NASA"/>
         <nomTheme>Sciences de l&apos;ingénieur</nomTheme>
     </owl:NamedIndividual>
     
@@ -1122,7 +1059,6 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Sciences_des_Données">
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Thème"/>
         <sousThemeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Informatique"/>
-        <themeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Cours_Sciences_de_Données"/>
         <nomTheme>Sciences des données</nomTheme>
     </owl:NamedIndividual>
     
@@ -1132,8 +1068,6 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#TPesquet">
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Animateur"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Personne"/>
-        <anime rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Conference_NASA"/>
         <travaillerPour rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#NASA"/>
         <nom>Thomas Pesquet</nom>
     </owl:NamedIndividual>
@@ -1144,8 +1078,6 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#UM">
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Company"/>
-        <organise rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Cours_Sciences_de_Données"/>
-        <organise rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Cours_Web_Semantique"/>
         <nomCompagnie>Université de Montpellier</nomCompagnie>
     </owl:NamedIndividual>
     
@@ -1155,7 +1087,6 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#UR">
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Company"/>
-        <organise rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Conference_Biologie_animale"/>
         <nomCompagnie>Université de La Réunion</nomCompagnie>
     </owl:NamedIndividual>
     
@@ -1165,7 +1096,6 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#UnivMo">
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Localisation"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Présentiel"/>
         <adresse>Campus Triolet</adresse>
     </owl:NamedIndividual>
     
@@ -1175,7 +1105,6 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#UnivReu">
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Localisation"/>
-        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Présentiel"/>
         <adresse>25 rue Mendes</adresse>
     </owl:NamedIndividual>
     
@@ -1186,7 +1115,6 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Web_Semantique">
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Thème"/>
         <sousThemeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Informatique"/>
-        <themeDe rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Cours_Web_Semantique"/>
         <nomTheme>Web Sémantique</nomTheme>
     </owl:NamedIndividual>
     
@@ -1225,7 +1153,6 @@
     <!-- http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#prixNucleophile -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#prixNucleophile">
-        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#BasPrix"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Prix"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#PrixPresentiel"/>
         <prixConference rdf:datatype="http://www.w3.org/2001/XMLSchema#float">25.0</prixConference>
@@ -1245,7 +1172,6 @@
     <!-- http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#prixWebSemDist -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#prixWebSemDist">
-        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#BasPrix"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Prix"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#PrixDistanciel"/>
         <prixConference rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</prixConference>
@@ -1256,7 +1182,6 @@
     <!-- http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#prixWebSemPres -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#prixWebSemPres">
-        <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#BasPrix"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#Prix"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#PrixPresentiel"/>
         <prixConference rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</prixConference>

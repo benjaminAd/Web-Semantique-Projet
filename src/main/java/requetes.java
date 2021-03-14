@@ -62,10 +62,12 @@ public class requetes {
 
     public void pastConference() {
         String req_pastConf = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +
-                "PREFIX conf: <http://www.semanticweb.org/adolp/ontologies/2021/Conference#>" +
-                "SELECT ?nom ?date " +
+                "PREFIX conf: <http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#>" +
+                "SELECT ?nom ?date ?prix " +
                 "WHERE {?s conf:date ?date ." +
                 " ?s conf:nomConf ?nom ." +
+                " ?s conf:cout ?prixOnto ." +
+                " ?prixOnto conf:prixConference ?prix ." +
                 "BIND((NOW()) as ?nowTime ) " +
                 "FILTER ( ?date < ?nowTime )}";
 
@@ -102,10 +104,12 @@ public class requetes {
 
     public void soonConference() {
         String req_1 = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +
-                "PREFIX conf: <http://www.semanticweb.org/adolp/ontologies/2021/Conference#>" +
-                "SELECT ?nom ?date " +
+                "PREFIX conf: <http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#>" +
+                "SELECT ?nom ?date ?prix " +
                 "WHERE {?s conf:date ?date ." +
                 " ?s conf:nomConf ?nom ." +
+                " ?s conf:cout ?prixOnto ." +
+                " ?prixOnto conf:prixConference ?prix ." +
                 "BIND((NOW()) as ?nowTime ) " +
                 "BIND(((DAY(?nowTime))+7) as ?nextWeek) " +
                 "FILTER ( ?date > ?nowTime && DAY(?date) <= ?nextWeek && MONTH(?date) = MONTH(?nowTime) && YEAR(?date) = YEAR(?nowTime))}";
@@ -143,12 +147,15 @@ public class requetes {
 
     public void conferenceByAnimateur(String animateur) {
         String req_animateur = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +
-                "PREFIX conference: <http://www.semanticweb.org/adolp/ontologies/2021/Conference#>" +
-                "SELECT ?title ?date  " +
-                "WHERE  { ?conference conference:nomConf ?title ." +
-                "?conference conference:date  ?date ." +
-                " ?conference conference:animéPar ?Animateur ." +
-                "?Animateur conference:nom \"" + animateur + "\"}";
+                "PREFIX conference: <http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#>" +
+                "SELECT ?title ?date ?prix " +
+                "WHERE {" +
+                " ?conference conference:nomConf ?title ." +
+                " ?conference conference:date  ?date ." +
+                " ?conference conference:cout ?prixOnto ." +
+                " ?prixOnto conference:prixConference ?prix ." +
+                " ?conference conference:animePar ?Animateur ." +
+                " ?Animateur conference:nom \"" + animateur + "\" }";
 
         try {
             Query q = QueryFactory.create(req_animateur);
@@ -187,12 +194,14 @@ public class requetes {
 
     public void conferenceByOrganisation(String organisation) {
         String req_organisateur = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +
-                "PREFIX conference: <http://www.semanticweb.org/adolp/ontologies/2021/Conference#>" +
-                "SELECT ?name ?date " +
+                "PREFIX conference: <http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#>" +
+                "SELECT ?name ?date ?prix " +
                 "WHERE  { " +
                 " ?conference conference:organiséPar ?company . " +
                 " ?conference conference:nomConf ?name ." +
                 " ?conference conference:date ?date ." +
+                " ?conference conference:cout ?prixOnto ." +
+                " ?prixOnto conference:prixConference ?prix ." +
                 " ?company conference:nomCompagnie \"" + organisation + "\"}";
         try {
             Query q = QueryFactory.create(req_organisateur);
@@ -234,11 +243,13 @@ public class requetes {
 
     public void cheapConference() {
         String req_cheapConference = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +
-                "PREFIX conf: <http://www.semanticweb.org/adolp/ontologies/2021/Conference#>" +
-                "SELECT ?nom ?date " +
-                "WHERE {?s rdf:type <http://www.semanticweb.org/adolp/ontologies/2021/Conference#BasPrixConference> ." +
+                "PREFIX conf: <http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#>" +
+                "SELECT ?nom ?date ?prix " +
+                "WHERE {?s rdf:type conf:BasPrixConference ." +
                 " ?s conf:nomConf ?nom ." +
-                " ?s conf:date ?data ." +
+                " ?s conf:date ?date ." +
+                " ?s conf:cout ?prixOnto ." +
+                " ?prixOnto conf:prixConference ?prix ." +
                 "}";
         Query q = QueryFactory.create(req_cheapConference);
         QueryExecution qexec = QueryExecutionFactory.create(q, this.model);
@@ -274,11 +285,13 @@ public class requetes {
 
     public void longConference() {
         String req_longConference = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +
-                "PREFIX conf: <http://www.semanticweb.org/adolp/ontologies/2021/Conference#>" +
-                "SELECT ?nom ?date " +
+                "PREFIX conf: <http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#>" +
+                "SELECT ?nom ?date ?prix " +
                 "WHERE {?s rdf:type conf:LongueConference . " +
                 " ?s conf:nomConf ?nom ." +
-                " ?s conf:date ?date" +
+                " ?s conf:date ?date ." +
+                " ?s conf:cout ?prixOnto ." +
+                " ?prixOnto conf:prixConference ?prix ." +
                 "}";
         Query q = QueryFactory.create(req_longConference);
         QueryExecution qexec = QueryExecutionFactory.create(q, this.model);
@@ -311,11 +324,13 @@ public class requetes {
 
     public void shortConference() {
         String req_shortConference = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +
-                "PREFIX conf: <http://www.semanticweb.org/adolp/ontologies/2021/Conference#>" +
-                "SELECT ?nom ?date " +
+                "PREFIX conf: <http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#>" +
+                "SELECT ?nom ?date ?prix " +
                 "WHERE {?s rdf:type conf:CourteConference ." +
                 " ?s conf:nomConf ?nom ." +
-                " ?s conf:date ?date" +
+                " ?s conf:date ?date ." +
+                " ?s conf:cout ?prixOnto ." +
+                " ?prixOnto conf:prixConference ?prix ." +
                 "}";
         Query q = QueryFactory.create(req_shortConference);
         QueryExecution qexec = QueryExecutionFactory.create(q, this.model);
@@ -352,11 +367,13 @@ public class requetes {
     public void TypeConference(String indice) {
         String[] types = {"VulgarisationConference", "ProConference", "HybrideConference", "PresentielConference", "DistancielConference", "MeilleurConference", "MauvaiseConference"};
         String req_TypeSort = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +
-                "PREFIX conf: <http://www.semanticweb.org/adolp/ontologies/2021/Conference#>" +
-                "SELECT ?nom ?date " +
+                "PREFIX conf: <http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#>" +
+                "SELECT ?nom ?date ?prix " +
                 "WHERE {?s rdf:type conf:" + types[Integer.parseInt(indice)] + " ." +
                 " ?s conf:nomConf ?nom ." +
-                " ?s conf:date ?date" +
+                " ?s conf:date ?date ." +
+                " ?s conf:cout ?prixOnto ." +
+                " ?prixOnto conf:prixConference ?prix ." +
                 "}";
         Query q = QueryFactory.create(req_TypeSort);
         QueryExecution qexec = QueryExecutionFactory.create(q, this.model);
@@ -391,13 +408,16 @@ public class requetes {
     }
 
     public void ThemeConference(String indice) {
-        String[] themes = {"Biologie", "Biologie_animale", "Calcul_des_forces", "Chimie", "Chimie_inorganique", "Informatique", "Ingienerie_spatialle", "Physique", "Sciences_des_Données", "Sciences_Ingenieur", "Web_Sémantique"};
+        String[] themes = {"Biologie_animale", "Calcul_des_forces", "Chimie_inorganique", "Ingienerie_spatiale", "Sciences_des_Données", "Sciences_Ingenieur", "Web_Semantique"};
         String req_TypeSort = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +
-                "PREFIX conf: <http://www.semanticweb.org/adolp/ontologies/2021/Conference#>" +
-                "SELECT ?nom ?date " +
-                "WHERE {?s conf:theme conf:" + themes[Integer.parseInt(indice)] + " ." +
+                "PREFIX conf: <http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#>" +
+                "SELECT ?nom ?date ?prix " +
+                "WHERE {" +
+                " ?s conf:theme conf:" + themes[Integer.parseInt(indice)] + " ." +
                 " ?s conf:nomConf ?nom ." +
-                " ?s conf:date ?date " +
+                " ?s conf:date ?date ." +
+                " ?s conf:cout ?prixOnto ." +
+                " ?prixOnto conf:prixConference ?prix ." +
                 "}";
         Query q = QueryFactory.create(req_TypeSort);
         QueryExecution qexec = QueryExecutionFactory.create(q, this.model);
@@ -431,14 +451,16 @@ public class requetes {
         }
         System.out.println("Quelques suggestions qui pourraient vous intéresser :");
         String req_suggestion = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +
-                "PREFIX conf: <http://www.semanticweb.org/adolp/ontologies/2021/Conference#>" +
-                "SELECT ?nom ?date " +
+                "PREFIX conf: <http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#>" +
+                "SELECT ?nom ?date ?prix " +
                 "WHERE {" +
                 " conf:" + themes[Integer.parseInt(indice)] + " conf:sousThemeDe ?PrimaryTheme ." +
                 " ?subTheme conf:sousThemeDe ?PrimaryTheme ." +
-                " ?s conf:Theme ?subTheme ." +
+                " ?s conf:theme ?subTheme ." +
                 " ?s conf:nomConf ?nom ." +
                 " ?s conf:date ?date ." +
+                " ?s conf:cout ?prixOnto ." +
+                " ?prixOnto conf:prixConference ?prix ." +
                 "}";
         Query q2 = QueryFactory.create(req_suggestion);
         QueryExecution qexec2 = QueryExecutionFactory.create(q2, this.model);
@@ -474,11 +496,13 @@ public class requetes {
 
     public void confByName(String name) {
         String req_TypeSort = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +
-                "PREFIX conf: <http://www.semanticweb.org/adolp/ontologies/2021/Conference#>" +
-                "SELECT ?nom ?date " +
+                "PREFIX conf: <http://www.semanticweb.org/adolp/ontologies/2021/2/untitled-ontology-17#>" +
+                "SELECT ?nom ?date ?prix " +
                 "WHERE { " +
                 " ?s conf:nomConf ?nom ." +
                 " ?s conf:date ?date ." +
+                " ?s conf:cout ?prixOnto ." +
+                " ?prixOnto conf:prixConference ?prix ." +
                 " FILTER regex(?nom,\"" + name + "\") ." +
                 "}";
         Query q = QueryFactory.create(req_TypeSort);
@@ -579,17 +603,13 @@ public class requetes {
                     break;
                 case "7":
                     System.out.println("Choisissez un thème");
-                    System.out.println("0. Biologie");
-                    System.out.println("1. Biologie animale");
-                    System.out.println("2. Calcul des forces");
-                    System.out.println("3. Chimie");
-                    System.out.println("4. Chimie inorganique");
-                    System.out.println("5. Informatique");
-                    System.out.println("6. Ingienerie spatiale");
-                    System.out.println("7. Physique");
-                    System.out.println("8. Sciences des données");
-                    System.out.println("9. Sciences de l'ingénieur");
-                    System.out.println("10. Web Sémantique");
+                    System.out.println("0. Biologie animale");
+                    System.out.println("1. Calcul des forces");
+                    System.out.println("2. Chimie inorganique");
+                    System.out.println("3. Ingienerie spatiale");
+                    System.out.println("4. Sciences des données");
+                    System.out.println("5. Sciences de l'ingénieur");
+                    System.out.println("6. Web Sémantique");
                     req.ThemeConference(user.nextLine());
                     break;
                 case "8":
