@@ -566,15 +566,22 @@ public class requetes {
                 case "2":
                     System.out.println("Quel est le nom de cet animateur?");
                     String animateur = user.nextLine();
-                    req.conferenceByAnimateur(animateur);
+                    try {
+                        req.conferenceByAnimateur(animateur);
+                    } catch (Exception ignored) {
+                        System.out.println("Une erreur est survenue");
+                    }
                     break;
                 case "3":
                     System.out.println("Quel est le nom de cette organisation?");
                     String organisation = user.nextLine();
-                    req.conferenceByOrganisation(organisation);
+                    try {
+                        req.conferenceByOrganisation(organisation);
+                    } catch (Exception ignored) {
+                        System.out.println("Une erreur est survenue");
+                    }
                     break;
                 case "4":
-                    System.out.flush();
                     req.cheapConference();
                     break;
                 case "5":
@@ -588,6 +595,8 @@ public class requetes {
                         case "1":
                             req.shortConference();
                             break;
+                        default:
+                            break;
                     }
                     break;
                 case "6":
@@ -599,7 +608,11 @@ public class requetes {
                     System.out.println("4. Distanciel");
                     System.out.println("5. Meilleure");
                     System.out.println("6. Mauvaise");
-                    req.TypeConference(user.nextLine());
+                    try {
+                        req.TypeConference(user.nextLine());
+                    } catch (Exception ignored) {
+                        System.out.println("Une erreur est survenue");
+                    }
                     break;
                 case "7":
                     System.out.println("Choisissez un thème");
@@ -610,13 +623,24 @@ public class requetes {
                     System.out.println("4. Sciences des données");
                     System.out.println("5. Sciences de l'ingénieur");
                     System.out.println("6. Web Sémantique");
-                    req.ThemeConference(user.nextLine());
+                    try {
+                        req.ThemeConference(user.nextLine());
+                    } catch (Exception ignored) {
+                        System.out.println("Une erreur est survenue");
+                    }
                     break;
                 case "8":
                     System.out.println("Entrez le nom de la conférence (Si vous ne connaissez pas le nom entièrement, écrivez une partie du nom)");
-                    req.confByName(user.nextLine());
+                    try {
+                        req.confByName(user.nextLine());
+                    } catch (Exception ignored) {
+                        System.out.println("Une erreur est survenue");
+
+                    }
                     break;
                 case "E":
+                    return;
+                default:
                     return;
             }
         }
